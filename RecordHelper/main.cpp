@@ -1,11 +1,31 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <sstream>
+#include <vector>
 
 using namespace std;
 
 string set_base_address();
 void before_enhancement();
+void fill_in_sec_attributes();
+void write_to_data_file();
+
+//ofstream record_file (artifact.address, ios::app);
+//record_file << type;
+//record_file << ",";
+
+struct Artifact{
+    string address = "-1";
+    int type = -1;
+    int base_attrib_type = -1;
+    float attrib_0[2] = {-1, -1};
+    float attrib_1[2] = {-1, -1};
+    float attrib_2[2] = {-1, -1};
+    float attrib_3[2] = {-1, -1};
+};
+
+static Artifact artifact;
 
 int main() {
     std::cout << "Welcome to the Artifact Impact data record helper!" << std::endl;
@@ -14,58 +34,56 @@ int main() {
     return 0;
 }
 
-void ask_attrib_and_write(string address);
 
 void before_enhancement(){
     string base_address = set_base_address();
-    string before_address = base_address;
-    before_address.append("0.csv");
+    artifact.address = base_address;
+    artifact.address.append("0.csv");
 
-    cout << "Please enter the number as the type of the artifact "
+    cout << "Please enter the number as the type of the artifact."
             "\n0: Flower, 1: Plume, 2: Sands, 3: Goblet, 4: Circlet\n>>";
-    int type;
-    cin >> type;
-    ofstream record_file (before_address, ios::app);
-    record_file << type;
-    record_file << ",";
+    cin >> artifact.type;
 
-    cout << "Please enter the number as the type of the base attribute of the artifact "
+    cout << "Please enter the number as the type of the base attribute of the artifact."
             "\n0: ATK, 1: ATK%, \n2: DEF, 3: DEF%, \n4: HP, 5: HP%, \n6: CRITRATE%, 7: CRITDMG%, \n8: ELEMASTER, 9: ENERREC%, "
             "\n10: HEALBOU%, \n11: PHYDMG%, 12: PYRODMG%, 13: ELECTRODMG%, 14: CRYODMG%, \n15: HYDRODMG%, 16: ANEMODMG%, 17: GEODMG%\n>>";
-    cin >> type;
-    record_file << type;
-    record_file << ",";
-    record_file.close();
+    cin >> artifact.base_attrib_type;
 
-    ask_attrib_and_write(before_address);
+    fill_in_sec_attributes();
+
+    write_to_data_file();
 }
 
-void ask_attrib_and_write(string address){
-    ofstream record_file (address, ios::app);
-    float value;
-    string attrib_keywords[18] = {"ATK", "ATK%", "DEF", "DEF%", "HP", "HP%", "CRITRATE%", "ELEMASTER", "ENERREC%",
-                                  "HEALBOU%", "PHYDMG%", "PYRODMG%", "ELECTRODMG%", "CRYODMG%", "HYDRODMG%", "ANEMODMG%", "GEODMG%"};
-    cout << attrib_keywords->length();
-    for(int i = 0; i < attrib_keywords->size(); i++){
-
+void parse_sec_attrib_input(string input, int pos){
+    stringstream ss(input);
+    vector<float> v;
+    while(ss.good()){
+        string substring;
+        getline(ss, substring, ',');
+        v.push_back(stof(substring));
     }
+    artifact.attrib_0[pos] = v[0];
+    artifact.attrib_1[pos] = v[1];
+    artifact.attrib_2[pos] = v[2];
+    if(v.size() == 4)
+    artifact.attrib_3[pos] = v[3];
 }
 
-float ask_and_return(string prompt){
-    cout << prompt << endl;
-    float value;
-    cin >> value;
-    return value;
-}
-
-
-void write_to_file(string address, float value){
-
+void fill_in_sec_attributes(){
+    cout << "Please enter numbers as the types of initial attributes, separate them with commas (e.g. 1,6,7)."
+            "\n0: ATK, 1: ATK%, \n2: DEF, 3: DEF%, \n4: HP, 5: HP%, \n6: CRITRATE%, 7: CRITDMG%, \n8: ELEMASTER, 9: ENERREC%, "
+            "\n10: HEALBOU%, \n11: PHYDMG%, 12: PYRODMG%, 13: ELECTRODMG%, 14: CRYODMG%, \n15: HYDRODMG%, 16: ANEMODMG%, 17: GEODMG%\n>>";
+    string input;
+    cin >> input;
+    parse_sec_attrib_input(input, 0);
+    cout << "Please enter corresponding values for previous attributes you have entered, separate them with commas (e.g. 3.6,3.9,7.8).\n>>";
+    cin >> input;
+    parse_sec_attrib_input(input, 1);
 }
 
 string set_base_address(){
     std::string record_address_base = "../../Data/";
-    std::cout << "Please enter the number as the set of the artifact "
+    std::cout << "Please enter the number as the set of the artifact."
                  "\n0: JueDouShi, \n1: YueTuan, \n2: MoNv, \n3: QianYan, \n4: ShaoNv, "
                  "\n5: CuiLv, \n6: DuHuo, \n7: ChenLun, \n8: CangBai, \n9: BingFeng\n>>";
     int set_num;
