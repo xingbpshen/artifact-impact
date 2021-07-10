@@ -6,6 +6,8 @@
 
 using namespace std;
 
+#define QUANTITY_OF_SEC_ATTRIB_TYPES 18
+
 string set_base_address();
 void before_enhancement();
 void fill_in_sec_attributes();
@@ -52,6 +54,28 @@ void before_enhancement(){
     fill_in_sec_attributes();
 
     write_to_data_file();
+}
+
+void write_to_data_file(){
+    ofstream recordfile (artifact.address, ios::app);
+    recordfile << artifact.type;
+    recordfile << ',';
+    recordfile << artifact.base_attrib_type;
+    recordfile << ',';
+    float sec_attrib_comple[QUANTITY_OF_SEC_ATTRIB_TYPES];
+    for(float & i : sec_attrib_comple){
+        i = 0;
+    }
+    sec_attrib_comple[(int)artifact.attrib_0[0]] = artifact.attrib_0[1];
+    sec_attrib_comple[(int)artifact.attrib_1[0]] = artifact.attrib_1[1];
+    sec_attrib_comple[(int)artifact.attrib_2[0]] = artifact.attrib_2[1];
+    if(artifact.attrib_3[0] != -1) sec_attrib_comple[(int)artifact.attrib_3[0]] = artifact.attrib_3[1];
+    for(float i : sec_attrib_comple){
+        recordfile << i;
+        recordfile << ',';
+    }
+    recordfile << '\n';
+    recordfile.close();
 }
 
 void parse_sec_attrib_input(string input, int pos){
