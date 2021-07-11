@@ -10,6 +10,7 @@ namespace fs = std::__fs::filesystem;
 using std::__fs::filesystem::current_path;
 
 #define QUANTITY_OF_SEC_ATTRIB_TYPES 18
+#define ENABLE_COMBINED_REC 1
 
 string set_base_address();
 void before_enhancement();
@@ -32,6 +33,11 @@ struct Artifact{
 static Artifact artifact;
 static string path;
 
+#if ENABLE_COMBINED_REC
+static string com_file_path_base;
+static string com_file_path;
+#endif
+
 int main() {
     init();
     std::cout << "Welcome to the Artifact Impact data record helper!" << std::endl;
@@ -47,6 +53,11 @@ int init(){
     path = current_path();
     path.append("/Artimpact/RH_data/");
     fs::create_directories(path);
+#if ENABLE_COMBINED_REC
+    com_file_path_base = path;
+    com_file_path_base.append("combined/");
+    fs::create_directories(com_file_path_base);
+#endif
     return 0;
 }
 
@@ -67,16 +78,20 @@ void check_rerun(){
 
 
 void before_enhancement(){
+#if ENABLE_COMBINED_REC
+    com_file_path = com_file_path_base;
+    com_file_path.append("0.csv");
+#endif
     string base_address = set_base_address();
     artifact.address = base_address;
     artifact.address.append("0.csv");
 
-    cout << "Now, the artifact should be at level 0." << endl;
+    cout << "\nNow, the artifact should be at level 0." << endl;
     cout << "Please enter the number as the type of the artifact."
             "\n0: Flower, 1: Plume, 2: Sands, 3: Goblet, 4: Circlet\n>>";
     cin >> artifact.type;
 
-    cout << "Please enter the number as the type of the base attribute of the artifact."
+    cout << "\nPlease enter the number as the type of the base attribute of the artifact."
             "\n0: ATK, 1: ATK%, \n2: DEF, 3: DEF%, \n4: HP, 5: HP%, \n6: CRITRATE%, 7: CRITDMG%, \n8: ELEMASTER, 9: ENERREC%, "
             "\n10: HEALBOU%, \n11: PHYDMG%, 12: PYRODMG%, 13: ELECTRODMG%, 14: CRYODMG%, \n15: HYDRODMG%, 16: ANEMODMG%, 17: GEODMG%\n>>";
     cin >> artifact.base_attrib_type;
@@ -89,6 +104,10 @@ void before_enhancement(){
 }
 
 void after_enhancement(string base_address){
+#if ENABLE_COMBINED_REC
+    com_file_path = com_file_path_base;
+    com_file_path.append("20.csv");
+#endif
     artifact.address = base_address;
     artifact.address.append("20.csv");
     cout << "Next, please enhance the artifact to level 20." << endl;
@@ -99,8 +118,8 @@ void after_enhancement(string base_address){
     cout << path << endl;
 }
 
-void write_to_data_file(){
-    ofstream recordfile (artifact.address, ios::app);
+void write(string input_path){
+    ofstream recordfile (input_path, ios::app);
     recordfile << artifact.type;
     recordfile << ',';
     recordfile << artifact.base_attrib_type;
@@ -121,6 +140,13 @@ void write_to_data_file(){
     recordfile.close();
 }
 
+void write_to_data_file(){
+    write(artifact.address);
+#if ENABLE_COMBINED_REC
+    write(com_file_path);
+#endif
+}
+
 void parse_sec_attrib_input(string input, int pos){
     stringstream ss(input);
     vector<float> v;
@@ -137,13 +163,13 @@ void parse_sec_attrib_input(string input, int pos){
 }
 
 void fill_in_sec_attributes(){
-    cout << "Please enter numbers as the types of secondary attributes, separate them with commas (e.g. 1,6,7,0)."
+    cout << "\nPlease enter numbers as the types of secondary attributes, separate them with commas (e.g. 1,6,7,0)."
             "\n0: ATK, 1: ATK%, \n2: DEF, 3: DEF%, \n4: HP, 5: HP%, \n6: CRITRATE%, 7: CRITDMG%, \n8: ELEMASTER, 9: ENERREC%, "
             "\n10: HEALBOU%, \n11: PHYDMG%, 12: PYRODMG%, 13: ELECTRODMG%, 14: CRYODMG%, \n15: HYDRODMG%, 16: ANEMODMG%, 17: GEODMG%\n>>";
     string input;
     cin >> input;
     parse_sec_attrib_input(input, 0);
-    cout << "Please enter corresponding values for previous attributes you have entered, separate them with commas (e.g. 3.6,3.9,7.8,16).\n>>";
+    cout << "\nPlease enter corresponding values for previous attributes you have entered, separate them with commas (e.g. 3.6,3.9,7.8,16).\n>>";
     cin >> input;
     parse_sec_attrib_input(input, 1);
 }
