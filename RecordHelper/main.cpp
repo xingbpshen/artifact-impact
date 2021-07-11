@@ -66,6 +66,8 @@ void check_rerun(){
     string input;
     cin >> input;
     if(input == "Y" || input == "y"){
+        Artifact new_artifact;
+        artifact = new_artifact;
         before_enhancement();
         check_rerun();
     } else if(input == "N" || input == "n"){
@@ -110,10 +112,10 @@ void after_enhancement(string base_address){
 #endif
     artifact.address = base_address;
     artifact.address.append("20.csv");
-    cout << "Next, please enhance the artifact to level 20." << endl;
+    cout << "\nNext, please enhance the artifact to level 20." << endl;
     fill_in_sec_attributes();
     write_to_data_file();
-    cout << "You are all set, thanks for recording the artifact data." << endl;
+    cout << "\nYou are all set, thanks for recording the artifact data." << endl;
     cout << "Data saved under ";
     cout << path << endl;
 }
