@@ -3,8 +3,11 @@
 #include <string>
 #include <sstream>
 #include <vector>
+#include <filesystem>
 
 using namespace std;
+namespace fs = std::__fs::filesystem;
+using std::__fs::filesystem::current_path;
 
 #define QUANTITY_OF_SEC_ATTRIB_TYPES 18
 
@@ -14,10 +17,7 @@ void fill_in_sec_attributes();
 void write_to_data_file();
 void after_enhancement(string base_address);
 void check_rerun();
-
-//ofstream record_file (artifact.address, ios::app);
-//record_file << type;
-//record_file << ",";
+int init();
 
 struct Artifact{
     string address = "-1";
@@ -30,14 +30,23 @@ struct Artifact{
 };
 
 static Artifact artifact;
+static string path;
 
 int main() {
+    init();
     std::cout << "Welcome to the Artifact Impact data record helper!" << std::endl;
 
     before_enhancement();
 
     check_rerun();
     cout << "Program exit... Thank you for using Artifact Impact - Record Helper!" << endl;
+    return 0;
+}
+
+int init(){
+    path = current_path();
+    path.append("/Artimpact/RH_data/");
+    fs::create_directories(path);
     return 0;
 }
 
@@ -86,6 +95,8 @@ void after_enhancement(string base_address){
     fill_in_sec_attributes();
     write_to_data_file();
     cout << "You are all set, thanks for recording the artifact data." << endl;
+    cout << "Data saved under ";
+    cout << path << endl;
 }
 
 void write_to_data_file(){
@@ -138,16 +149,66 @@ void fill_in_sec_attributes(){
 }
 
 string set_base_address(){
-    std::string record_address_base = "../../Data/";
+    std::string record_address_base = path;
     std::cout << "Please enter the number as the set of the artifact."
                  "\n0: JueDouShi, \n1: YueTuan, \n2: MoNv, \n3: QianYan, \n4: ShaoNv, "
-                 "\n5: CuiLv, \n6: DuHuo, \n7: ChenLun, \n8: CangBai, \n9: BingFeng\n>>";
+                 "\n5: CuiLv, \n6: DuHuo, \n7: ChenLun, \n8: CangBai, \n9: BingFeng, "
+                 "\n10: ZongShi, \n11: RanXue, \n12: RuLei, \n13: NiFei, \n14: PanYan, \n15: PingLei\n>>";
     int set_num;
     std::cin >> set_num;
     switch(set_num){
+        case 0:
+            record_address_base.append("jue_dou_shi/");
+            break;
+        case 1:
+            record_address_base.append("yue_tuan/");
+            break;
+        case 2:
+            record_address_base.append("mo_nv/");
+            break;
+        case 3:
+            record_address_base.append("qian_yan/");
+            break;
+        case 4:
+            record_address_base.append("shao_nv/");
+            break;
+        case 5:
+            record_address_base.append("cui_lv/");
+            break;
+        case 6:
+            record_address_base.append("du_huo/");
+            break;
+        case 7:
+            record_address_base.append("chen_lun/");
+            break;
+        case 8:
+            record_address_base.append("cang_bai/");
+            break;
         case 9:
             record_address_base.append("bing_feng/");
             break;
+        case 10:
+            record_address_base.append("zong_shi/");
+            break;
+        case 11:
+            record_address_base.append("ran_xue/");
+            break;
+        case 12:
+            record_address_base.append("ru_lei/");
+            break;
+        case 13:
+            record_address_base.append("ni_fei/");
+            break;
+        case 14:
+            record_address_base.append("pan_yan/");
+            break;
+        case 15:
+            record_address_base.append("ping_lei/");
+            break;
+        default:
+            cout << "Invalid input, please try again." << endl;
+            set_base_address();
     }
+    fs::create_directories(record_address_base);
     return record_address_base;
 }
