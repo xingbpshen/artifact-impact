@@ -7,9 +7,9 @@ July 11, 2021\
 
 # Record Helper v.1.1 beta
 July 12, 2021
--新增了录入至总合文件功能，现在新录入的任何数据都会同时添加至combined目录中。
--优化了显示界面。
--此Beta测试版本目前仅支持Unix系统。
+- 新增了录入至总合文件功能，现在新录入的任何数据都会同时添加至combined目录中。
+- 优化了显示界面。
+- 此Beta测试版本目前仅支持Unix系统。
 
 # Record Helper v.1.0
 July 11, 2021
