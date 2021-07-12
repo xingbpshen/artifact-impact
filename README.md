@@ -5,6 +5,11 @@ A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物�
 July 11, 2021\
 用便捷小巧的方式记录圣遗物的强化数据，并转换为特定的文件类型以便在后续的研发中使用。请访问Releases文件夹。
 
+# Record Helper v.1.2 beta
+July 12, 2021
+- 优化了数据采集的维度，现在只会记录十种副词条。
+- 优化了显示界面，列表的结构变得更为清晰了。
+
 # Record Helper v.1.1
 July 12, 2021
 - 【重要】修复了过去的残留数据有几率会延续到新数据中的Bug。
