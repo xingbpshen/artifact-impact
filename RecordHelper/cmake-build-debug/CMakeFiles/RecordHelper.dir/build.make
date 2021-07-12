@@ -79,15 +79,15 @@ include CMakeFiles/RecordHelper.dir/flags.make
 CMakeFiles/RecordHelper.dir/main.cpp.o: CMakeFiles/RecordHelper.dir/flags.make
 CMakeFiles/RecordHelper.dir/main.cpp.o: ../main.cpp
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/RecordHelper.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RecordHelper.dir/main.cpp.o -c /Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp
+	/usr/local/Cellar/gcc@8/8.5.0/bin/g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/RecordHelper.dir/main.cpp.o -c /Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp
 
 CMakeFiles/RecordHelper.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/RecordHelper.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp > CMakeFiles/RecordHelper.dir/main.cpp.i
+	/usr/local/Cellar/gcc@8/8.5.0/bin/g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp > CMakeFiles/RecordHelper.dir/main.cpp.i
 
 CMakeFiles/RecordHelper.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/RecordHelper.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp -o CMakeFiles/RecordHelper.dir/main.cpp.s
+	/usr/local/Cellar/gcc@8/8.5.0/bin/g++-8 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp -o CMakeFiles/RecordHelper.dir/main.cpp.s
 
 # Object files for target RecordHelper
 RecordHelper_OBJECTS = \

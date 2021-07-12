@@ -7,7 +7,7 @@
 
 using namespace std;
 namespace fs = std::__fs::filesystem;
-using std::__fs::filesystem::current_path;
+using std::filesystem::current_path;
 
 #define QUANTITY_OF_SEC_ATTRIB_TYPES 10
 #define ENABLE_COMBINED_REC 1
