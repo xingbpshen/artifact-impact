@@ -1,11 +1,19 @@
 # artifact-impact
 A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。
 
-# _Artifact Impact - Record Helper现已推出_
-July 11, 2021\
+# _Record Helper现已更名为Recorder_
+July 12, 2021\
 用便捷小巧的方式记录圣遗物的强化数据，并转换为特定的文件类型以便在后续的研发中使用。请访问Releases文件夹。
 
-# Record Helper v.1.2 beta
+# Recorder v.1.2 (原Record Helper)
+July 12, 2021
+- 【重要】重启对Windows系统的支持，但需具备Cygwin环境。
+- 优化了底层逻辑，现采用C++17及以上标准。
+- 优化了数据采集的维度，现在只会记录十种副词条。
+- 优化了显示界面，列表的结构变得更为清晰了。
+- 支持MacOS及Windows系统。
+
+# Record Helper v.1.2 beta（已结束）
 July 12, 2021
 - 优化了数据采集的维度，现在只会记录十种副词条。
 - 优化了显示界面，列表的结构变得更为清晰了。
