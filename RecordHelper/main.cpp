@@ -7,9 +7,9 @@
 
 using namespace std;
 namespace fs = std::__fs::filesystem;
-using std::__fs::filesystem::current_path;
+using std::filesystem::current_path;
 
-#define QUANTITY_OF_SEC_ATTRIB_TYPES 18
+#define QUANTITY_OF_SEC_ATTRIB_TYPES 10
 #define ENABLE_COMBINED_REC 1
 
 string set_base_address();
@@ -94,8 +94,18 @@ void before_enhancement(){
     cin >> artifact.type;
 
     cout << "\nPlease enter the number as the type of the base attribute of the artifact."
-            "\n0: ATK, 1: ATK%, \n2: DEF, 3: DEF%, \n4: HP, 5: HP%, \n6: CRITRATE%, 7: CRITDMG%, \n8: ELEMASTER, 9: ENERREC%, "
-            "\n10: HEALBOU%, \n11: PHYDMG%, 12: PYRODMG%, 13: ELECTRODMG%, 14: CRYODMG%, \n15: HYDRODMG%, 16: ANEMODMG%, 17: GEODMG%\n>>";
+            "\n0: ATK,        1: ATK%, "
+            "\n2: DEF,        3: DEF%, "
+            "\n4: HP,         5: HP%, "
+            "\n6: CRITRATE%,  7: CRITDMG%, "
+            "\n8: ELEMASTER, "
+            "\n9: ENERREC%, "
+            "\n10: HEALBOU%, "
+            "\n11: PHYDMG%, "
+            "\n12: PYRODMG%,  13: ELECTRODMG%, "
+            "\n14: CRYODMG%,  15: HYDRODMG%, "
+            "\n16: ANEMODMG%, 17: GEODMG%"
+            "\n>>";
     cin >> artifact.base_attrib_type;
 
     fill_in_sec_attributes();
@@ -166,12 +176,18 @@ void parse_sec_attrib_input(string input, int pos){
 
 void fill_in_sec_attributes(){
     cout << "\nPlease enter numbers as the types of secondary attributes, separate them with commas (e.g. 1,6,7,0)."
-            "\n0: ATK, 1: ATK%, \n2: DEF, 3: DEF%, \n4: HP, 5: HP%, \n6: CRITRATE%, 7: CRITDMG%, \n8: ELEMASTER, 9: ENERREC%, "
-            "\n10: HEALBOU%, \n11: PHYDMG%, 12: PYRODMG%, 13: ELECTRODMG%, 14: CRYODMG%, \n15: HYDRODMG%, 16: ANEMODMG%, 17: GEODMG%\n>>";
+            "\n0: ATK,       1: ATK%, "
+            "\n2: DEF,       3: DEF%, "
+            "\n4: HP,        5: HP%, "
+            "\n6: CRITRATE%, 7: CRITDMG%, "
+            "\n8: ELEMASTER, "
+            "\n9: ENERREC%"
+            "\n>>";
     string input;
     cin >> input;
     parse_sec_attrib_input(input, 0);
-    cout << "\nPlease enter corresponding values for previous attributes you have entered, separate them with commas (e.g. 3.6,3.9,7.8,16).\n>>";
+    cout << "\nPlease enter corresponding values for previous attributes you have entered, separate them with commas (e.g. 3.6,3.9,7.8,16)."
+            "\n>>";
     cin >> input;
     parse_sec_attrib_input(input, 1);
 }
@@ -181,7 +197,8 @@ string set_base_address(){
     std::cout << "Please enter the number as the set of the artifact."
                  "\n0: JueDouShi, \n1: YueTuan, \n2: MoNv, \n3: QianYan, \n4: ShaoNv, "
                  "\n5: CuiLv, \n6: DuHuo, \n7: ChenLun, \n8: CangBai, \n9: BingFeng, "
-                 "\n10: ZongShi, \n11: RanXue, \n12: RuLei, \n13: NiFei, \n14: PanYan, \n15: PingLei\n>>";
+                 "\n10: ZongShi, \n11: RanXue, \n12: RuLei, \n13: NiFei, \n14: PanYan, \n15: PingLei"
+                 "\n>>";
     int set_num;
     std::cin >> set_num;
     switch(set_num){

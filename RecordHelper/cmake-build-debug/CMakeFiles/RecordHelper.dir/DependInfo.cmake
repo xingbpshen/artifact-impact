@@ -6,7 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/main.cpp" "/Users/AntonioShen/MLProjects/artifact-impact/RecordHelper/cmake-build-debug/CMakeFiles/RecordHelper.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "AppleClang")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
