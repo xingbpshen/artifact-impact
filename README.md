@@ -1,9 +1,20 @@
 # artifact-impact
 A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。
 
+# _Artifact Impact - Estimator测试版现已在MacOS端推出_
+July 17, 2021\
+从此不再盲目选择强化圣遗物。输入未强化的圣遗物的各项数据，得到预测的强化满级的词条数据。从而有远见般的选择优质的圣遗物进行强化，同时节约强化素材。请访问Releases文件夹。
+
 # _Record Helper现已更名为Recorder_
 July 12, 2021\
 用便捷小巧的方式记录圣遗物的强化数据，并转换为特定的文件类型以便在后续的研发中使用。请访问Releases文件夹。
+
+# Estimator v.1.0 beta
+July 17, 2021
+- 操作界面以控制台模式。
+- 支持双暴总和数值预测。
+- 本次测试目前仅支持MacOS系统，Windows系统预计在后续版本更新中被支持。
+- 预测值仅供参考，后续版本更新会优化预测值。
 
 # Recorder v.1.2 (原Record Helper)
 July 12, 2021
