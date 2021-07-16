@@ -1,2 +1,8 @@
 .DS_Store
 .idea
+.pkl
+ArtifactImpact/hooks/
+ArtifactImpact/build/
+ArtifactImpact/dist/
+.spec
+ArtifactImpact/__pycache__/
