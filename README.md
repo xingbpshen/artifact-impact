@@ -13,7 +13,7 @@ July 17, 2021\
 July 12, 2021\
 用便捷小巧的方式记录圣遗物的强化数据，并转换为特定的文件类型以便在后续的研发中使用。请访问Releases文件夹。
 
-# Estimator v1.0 beta
+# Estimator v1.0-beta
 July 17, 2021
 - 操作界面以控制台模式。
 - 支持双暴总和数值预测。
@@ -28,7 +28,7 @@ July 12, 2021
 - 优化了显示界面，列表的结构变得更为清晰了。
 - 支持MacOS及Windows系统。
 
-# Record Helper v1.2 beta（已结束）
+# Record Helper v1.2-beta（已结束）
 July 12, 2021
 - 优化了数据采集的维度，现在只会记录十种副词条。
 - 优化了显示界面，列表的结构变得更为清晰了。
@@ -41,7 +41,7 @@ July 12, 2021
 - 优化了显示界面。
 - 仅支持Unix系统，由于依赖环境的问题暂停对Windows系统的支持。
 
-# Record Helper v1.1 beta（已结束）
+# Record Helper v1.1-beta（已结束）
 July 12, 2021
 - 新增了录入至总合文件功能，现在新录入的任何数据都会同时添加至combined目录中。
 - 优化了显示界面。
