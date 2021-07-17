@@ -1,9 +1,9 @@
 # artifact-impact
 A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。
-- Recorder配置和启动方式(for MacOS)：
+- Recorder配置和启动方式：
   1. 解压.zip文件；
   2. 访问解压完成后的文件夹；
-  3. 双击运行Recorder程序。
+  3. （Windows用户需先安装Cygwin并将Cygwin添加至系统环境变量）双击运行Recorder程序。
 - Estimator配置和启动方式：
   1. 解压.zip文件；
   2. 访问解压完成后的文件夹下的dist文件夹；
