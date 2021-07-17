@@ -6,3 +6,4 @@ ArtifactImpact/build/
 ArtifactImpact/dist/
 .spec
 ArtifactImpact/__pycache__/
+ArtifactImpact/main.py
