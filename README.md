@@ -1,9 +1,13 @@
 # artifact-impact
 A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。
-- Estimator配置和启动方式
-  1. 解压.zip文件
-  2. 访问解压完成后的文件夹下的dist文件夹
-  3. 双击运行Estimator程序
+- Recorder配置和启动方式(for MacOS)：
+  1. 解压.zip文件；
+  2. 访问解压完成后的文件夹；
+  3. 双击运行Recorder程序。
+- Estimator配置和启动方式：
+  1. 解压.zip文件；
+  2. 访问解压完成后的文件夹下的dist文件夹；
+  3. 双击运行Estimator程序。
 
 # _关于Estimator v1.0-beta在某些设备上启动缓慢_
 July 17, 2021\
