@@ -1,7 +1,7 @@
 # artifact-impact
 A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。
 
-# _关于Estimator v1.0b在某些设备上启动缓慢_
+# _关于Estimator v1.0-beta在某些设备上启动缓慢_
 July 17, 2021\
 由于软件依赖包体积较大，某些设备在每次启动软件之初会经历明显的加载时间，请不要在窗口内进行任何操作并耐心等待约30～60秒（等待时长随设备性能变化）。
 
