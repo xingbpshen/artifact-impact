@@ -1,9 +1,9 @@
 .DS_Store
 .idea
 .pkl
-ArtifactImpact/hooks/
-ArtifactImpact/build/
-ArtifactImpact/dist/
+Estimator/hooks/
+Estimator/build/
+Estimator/dist/
 .spec
-ArtifactImpact/__pycache__/
-ArtifactImpact/main.py
+Estimator/__pycache__/
+Estimator/main.py
