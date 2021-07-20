@@ -9,11 +9,11 @@ A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物�
   2. 访问解压完成后的文件夹下的dist文件夹；
   3. （MacOS用户需将model.pkl复制到"/Users/你的用户名/"目录下）双击运行Estimator程序。
 
-# _Artifact Impact - Estimator v1.0正式版现已在双端推出_
-July 18, 2021\
+# _Artifact Impact - Estimator v2.0正式版现已在双端推出_
+July 20, 2021\
 从此不再盲目选择强化圣遗物。输入未强化的圣遗物的各项数据，得到预测的强化满级的词条数据。从而有远见地选择优质的圣遗物进行强化，同时节约强化素材。请访问Releases。
 
-# _关于Estimator v1.0在启动时和运行中_
+# _关于Estimator在启动时和运行中_
 July 18, 2021\
 由于软件依赖包体积较大，某些设备在每次启动软件之初会经历明显的加载时间，请不要在窗口内进行任何操作并耐心等待约5～60秒（等待时长随设备性能变化）。\
 出现关于TensorFlow的Warning可以忽略，不会影响Estimator的正常使用。
@@ -21,6 +21,17 @@ July 18, 2021\
 # _Record Helper现已更名为Recorder_
 July 12, 2021\
 用便捷小巧的方式记录圣遗物的强化数据，并转换为特定的文件类型以便在后续的研发中使用。请访问Releases。
+
+# Estimator v2.0
+July 20, 2021
+- 【重要】使用新一代的计算模型使得预测值准确率大幅提高。
+- 【重要】修复了输入的浮点数会被转换成整数的Bug。
+- 优化与新增了判断逻辑。
+- 在启动时会显示版本信息等。
+- 操作界面以控制台模式。
+- 支持双暴总和数值预测。
+- 支持MacOS与Windows系统。
+- 预测值仅供参考，后续版本更新会继续优化预测值。
 
 # Estimator v1.0
 July 18, 2021
