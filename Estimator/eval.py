@@ -21,7 +21,7 @@ def preprocessing(train_x, train_y):
     return train_x, train_y
 
 
-model = joblib.load('//model.pkl');
+model = joblib.load('model.pkl')
 test_x, test_y = read_file('/Users/AntonioShen/MLProjects/artifact-impact/Data/testing/')
 test_x, test_y = preprocessing(test_x, test_y)
 

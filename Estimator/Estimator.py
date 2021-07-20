@@ -33,7 +33,9 @@ def check_continue():
 
 def start():
     data = np.array([0, 0])
+    data = np.ndarray.astype(data, float)
     data_2 = np.array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+    data_2 = np.ndarray.astype(data_2, float)
     # read_from_input("Please enter the number as the set of the artifact."
     #                          "\n0: JueDouShi, \n1: YueTuan, \n2: MoNv, \n3: QianYan, \n4: ShaoNv, "
     #                          "\n5: CuiLv, \n6: DuHuo, \n7: ChenLun, \n8: CangBai, \n9: BingFeng, "
@@ -80,15 +82,23 @@ def start():
     data_2 = np.ndarray.astype(data_2, float)
     data = np.append(data, data_2)
 
+    data_o = data
     data = (data - min_x_set) / (max_x_set - min_x_set)
     data = np.reshape(data, (1, 12))
     pred = model.predict(data) * (max_y_set - min_y_set) + min_y_set
     pred = np.reshape(pred, (12,))
     sys.stdout.write("\nThe estimated final total CRIT (CRITRATE * 2 + CRITDMG) is: \n")
-    sys.stdout.write(str(pred[8] * 2 + pred[9]))
+    if (pred[8] * 2 + pred[9]) > (data_o[8] * 2 + data_o[9]):
+        sys.stdout.write(str(pred[8] * 2 + pred[9]))
+    else:
+        sys.stdout.write(str(data_o[8] * 2 + data_o[9]))
     sys.stdout.write("\n")
     check_continue()
 
 
-sys.stdout.write("\n\n\nWelcome to Artifact Impact - Estimator v1.0!\n")
+sys.stdout.write("\n\n\nWelcome to Artifact Impact - Estimator!\n")
+sys.stdout.write("\nVersion 2.0\n")
+sys.stdout.write("(Check for updates: https://github.com/AntonioShen/artifact-impact/releases)\n")
+sys.stdout.write("Author: The Artimpact Team\n")
+sys.stdout.write("License: GNU General Public License v3.0\n")
 start()
