@@ -7,7 +7,7 @@ A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物�
 - Estimator配置和启动方式：
   1. 解压.zip文件；
   2. 访问解压完成后的文件夹下的dist文件夹；
-  3. 双击运行Estimator程序。
+  3. （MacOS用户需将model.pkl复制到"/Users/你的用户名/"目录下）双击运行Estimator程序。
 
 # _Artifact Impact - Estimator v1.0正式版现已在双端推出_
 July 18, 2021\
