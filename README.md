@@ -9,8 +9,8 @@ A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物�
   2. 访问解压完成后的文件夹下的dist文件夹；
   3. （MacOS用户需将model.pkl复制到"/Users/你的用户名/"目录下）双击运行Estimator程序。
 
-# _Artifact Impact - Estimator v2.0正式版现已在双端推出_
-July 20, 2021\
+# _Artifact Impact - Estimator正式版现已在双端推出_
+July 22, 2021\
 从此不再盲目选择强化圣遗物。输入未强化的圣遗物的各项数据，得到预测的强化满级的词条数据。从而有远见地选择优质的圣遗物进行强化，同时节约强化素材。请访问Releases。
 
 # _关于Estimator在启动时和运行中_
