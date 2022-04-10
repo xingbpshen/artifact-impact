@@ -1,5 +1,6 @@
 # artifact-impact
-A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。
+A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。\
+预计May 1, 2022开始开发网页端的服务。
 - Recorder配置和启动方式：
   1. 解压.zip文件；
   2. 访问解压完成后的文件夹；
