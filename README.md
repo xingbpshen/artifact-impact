@@ -1,5 +1,6 @@
 # artifact-impact
 A [Genshin Impact] artifacts enhancement estimator. 一个【原神】圣遗物强化预测工具。\
+此公告最后更新于Last update: May 18, 2022 \
 Web端Artimpact v3.0正在研发中，采用全新算法，扩展的功能和更便捷的访问。Visit the new artifact-impact project, please check https://github.com/AntonioShen/ARTIMPACTv3. \
 本地版本v2.0暂时停止维护。This version of Artimpact v2.0 (local) is suspending its development and regualr maintenances.
 - Recorder配置和启动方式：
